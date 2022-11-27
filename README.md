@@ -1,2 +1,2 @@
-# CompProgramming
-Solutions to my Leetcode, Codewars, and Project Euler problems
+# LeetCode
+My solutions to the leetcode problems that I have solved
