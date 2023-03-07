@@ -1,5 +1,3 @@
-using NUnit.Framework;
-
 namespace LeetCode.Tests;
 
 using Solutions.Solutions;
@@ -7,13 +5,13 @@ using Solutions.Solutions;
 [TestFixture]
 public class Test_1342
 {
-    private ReduceToZeroSolution _solution;
-
     [SetUp]
     public void Setup()
     {
         _solution = new ReduceToZeroSolution();
     }
+
+    private ReduceToZeroSolution _solution;
 
     [Test]
     public void Test1()

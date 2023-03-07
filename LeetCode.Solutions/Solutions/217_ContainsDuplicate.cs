@@ -8,13 +8,11 @@ public class ContainsDuplicate
         HashSet<int> dupes = new();
         foreach (int num in nums)
         {
-            if (dupes.Contains(num))
-            {
-                return true;
-            }
+            if (dupes.Contains(num)) return true;
 
             dupes.Add(num);
         }
+
         return false;
     }
 }

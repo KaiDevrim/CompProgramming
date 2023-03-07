@@ -1,5 +1,3 @@
-
-
 namespace LeetCode.Tests;
 
 using Solutions.Solutions;
@@ -7,13 +5,13 @@ using Solutions.Solutions;
 [TestFixture]
 public class Test_217
 {
-    private ContainsDuplicate _solution;
-
     [SetUp]
     public void Setup()
     {
         _solution = new ContainsDuplicate();
     }
+
+    private ContainsDuplicate _solution;
 
     [Test]
     public void Test1()
