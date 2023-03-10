@@ -1,20 +1,75 @@
 ﻿Console.WriteLine("Hello World");
+string s = "car";
+string t = "cra";
+var letters = new Dictionary<char, int>(){
+    {'A', 1},
+    {'B', 2},
+    {'C', 3},
+    {'D', 4},
+    {'E', 5},
+    {'F', 6},
+    {'G', 7},
+    {'H', 8},
+    {'I', 9},
+    {'J', 10},
+    {'K', 11},
+    {'L', 12},
+    {'M', 13},
+    {'N', 14},
+    {'O', 15},
+    {'P', 16},
+    {'Q', 17},
+    {'R', 18},
+    {'S', 19},
+    {'T', 20},
+    {'U', 21},
+    {'V', 22},
+    {'W', 23},
+    {'X', 24},
+    {'Y', 25},
+    {'Z', 26},
+};
 
-int[] test = new int[6];
-
-for (int i = 0; i < 5; i++)
+if (s == t)
 {
-    test[i] = i;
+    Console.WriteLine("true");
 }
 
-int tmp = 0;
-int current = 0;
+char[] charS = s.ToUpper().ToCharArray();
+char[] charT = t.ToUpper().ToCharArray();
 
-for (int i = 0; i >= 0; i--)
+for (int i = 0; i < s.Length - 1; i++)
 {
-    test[i + 1] = test[i];
+    for (int j = 0; j < s.Length - i - 1; j++)
+    {
+        if (letters[charS[j]] > letters[charS[j+1]])
+        {
+            var tempVar = charS[j];
+            charS[j] = charS[j+1];
+            charS[j+1] = tempVar;
+        }
+    }
 }
 
-test[0] = 42;
+for (int i = 0; i < t.Length - 1; i++)
+{
+    for (int j = 0; j < t.Length - i - 1; j++)
+    {
+        if (letters[charT[j]] > letters[charT[j+1]])
+        {
+            var tempVar = charT[j];
+            charT[j] = charT[j+1];
+            charT[j+1] = tempVar;
+        }
+    }
+}
 
-Console.WriteLine("jfdas");
+if (charS.SequenceEqual(charT))
+{
+    Console.WriteLine("true");
+}
+
+if (!charS.SequenceEqual(charT))
+{
+    Console.WriteLine("false");
+}
