@@ -1,7 +1,8 @@
 ﻿Console.WriteLine("Hello World");
 string s = "car";
 string t = "cra";
-var letters = new Dictionary<char, int>(){
+Dictionary<char, int> letters = new Dictionary<char, int>
+{
     {'A', 1},
     {'B', 2},
     {'C', 3},
@@ -27,49 +28,32 @@ var letters = new Dictionary<char, int>(){
     {'W', 23},
     {'X', 24},
     {'Y', 25},
-    {'Z', 26},
+    {'Z', 26}
 };
 
-if (s == t)
-{
-    Console.WriteLine("true");
-}
+if (s == t) Console.WriteLine("true");
 
 char[] charS = s.ToUpper().ToCharArray();
 char[] charT = t.ToUpper().ToCharArray();
 
 for (int i = 0; i < s.Length - 1; i++)
-{
-    for (int j = 0; j < s.Length - i - 1; j++)
+for (int j = 0; j < s.Length - i - 1; j++)
+    if (letters[charS[j]] > letters[charS[j + 1]])
     {
-        if (letters[charS[j]] > letters[charS[j+1]])
-        {
-            var tempVar = charS[j];
-            charS[j] = charS[j+1];
-            charS[j+1] = tempVar;
-        }
+        char tempVar = charS[j];
+        charS[j] = charS[j + 1];
+        charS[j + 1] = tempVar;
     }
-}
 
 for (int i = 0; i < t.Length - 1; i++)
-{
-    for (int j = 0; j < t.Length - i - 1; j++)
+for (int j = 0; j < t.Length - i - 1; j++)
+    if (letters[charT[j]] > letters[charT[j + 1]])
     {
-        if (letters[charT[j]] > letters[charT[j+1]])
-        {
-            var tempVar = charT[j];
-            charT[j] = charT[j+1];
-            charT[j+1] = tempVar;
-        }
+        char tempVar = charT[j];
+        charT[j] = charT[j + 1];
+        charT[j + 1] = tempVar;
     }
-}
 
-if (charS.SequenceEqual(charT))
-{
-    Console.WriteLine("true");
-}
+if (charS.SequenceEqual(charT)) Console.WriteLine("true");
 
-if (!charS.SequenceEqual(charT))
-{
-    Console.WriteLine("false");
-}
+if (!charS.SequenceEqual(charT)) Console.WriteLine("false");

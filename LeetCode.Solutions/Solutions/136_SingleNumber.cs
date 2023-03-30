@@ -6,10 +6,7 @@ public class SingleNumber
     {
         if (nums.Length == 1) return nums[0];
         int num = nums[0];
-        for (int i = 1; i < nums.Length; i++)
-        {
-            num = num ^ nums[i];
-        }
+        for (int i = 1; i < nums.Length; i++) num = num ^ nums[i];
 
         return num;
     }
